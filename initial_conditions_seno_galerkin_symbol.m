@@ -1,5 +1,4 @@
 function [a0_sym, b0_sym, c0_sym] = initial_conditions_seno_galerkin_symbol()
-    % Coeficientes iniciales simbólicos para Galerkin con 3 modos seno en [0,d]
     
     syms x d
     % Funciones base senoidales
