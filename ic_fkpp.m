@@ -15,6 +15,6 @@ function x0 = ic_fkpp(Nm, d)
     % calculo condiciones iniciales
     x0 = zeros(Nm,1);
     for n = 1:Nm
-        x0(n) = sum(u0 .* phi{n} .* w) / sum(phi{n}.^2 .* w);
+        x0(n) = sum(u0 .* phi{n});
     end
 end
