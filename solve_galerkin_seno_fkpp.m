@@ -1,4 +1,4 @@
-function [uxt] = solve_galerkin_seno_fkpp(Nm, Tf, D, d, r, alpha, gcoef, gu)
+function [uxt] = solve_galerkin_seno_fkpp(Nm, Tf, D, d, r, alpha, gcoef, gu, tol)
 
     % para obtener graficas, gcoef = 1, gu = 1
     % Nm: número de funciones base
@@ -10,7 +10,7 @@ function [uxt] = solve_galerkin_seno_fkpp(Nm, Tf, D, d, r, alpha, gcoef, gu)
     [N_fun, phi_fun, xgrid] = galerkin_seno_fkpp(Nm, D, d, r, alpha);
 
     % Resolver sistema ODE
-    options = odeset('RelTol', 1e-4, 'AbsTol', 1e-4);
+    options = odeset('RelTol', tol, 'AbsTol', tol);
     [T, X] = ode23s(@(t, X) funode(t, X, N_fun), [0 Tf], x0, options);
 
     % Reconstrucción solución u(x,t)
