@@ -1,4 +1,5 @@
 function [ap_sym, bp_sym, cp_sym] = galerkin_seno_sym()
+    % A es \alpha
     syms x a b c D d r A real
 
     % Base de funciones seno normalizadas
