@@ -58,7 +58,7 @@ title(['Superficie de error entre métodos (Nm = ', num2str(Nm), ')'])
 shading interp
 colormap turbo
 colorbar
-view(3)  % puedes usar view(2) para vista superior
+view(2)  % 
 
 function dXdt = funode(~, X, N_fun)
         b_vec = N_fun(X);
